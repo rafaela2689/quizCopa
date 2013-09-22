@@ -1,5 +1,7 @@
 package com.android.quizcopa;
 
+import com.android.iniciar.Categoria;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,16 +12,24 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 	
-	Button btnAjuda, btnSobre;
+	Button btnAjuda, btnSobre, btnIniciar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		btnIniciar = (Button)findViewById(R.id.btnIniciar);
 		btnAjuda = (Button)findViewById(R.id.btnAjuda);
 		btnSobre = (Button)findViewById(R.id.btnSobre);
 		
+		//ao clicar no botao iniciar
+		btnIniciar.setOnClickListener(new OnClickListener(){
+			public void onClick(View v){
+				carregaTelaIniciar();
+			}
+		});
+
 		//ao clicar no botao ajuda
 		btnAjuda.setOnClickListener(new OnClickListener(){
 			public void onClick(View v){
@@ -34,6 +44,12 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
+	
+	//chama a tela Iniciar
+		public void carregaTelaIniciar(){
+			Intent telaIniciar = new Intent (MainActivity.this, Categoria.class);
+			startActivity(telaIniciar);
+		}
 	
 	//chama a tela de Ajuda
 	public void carregaTelaAjuda(){

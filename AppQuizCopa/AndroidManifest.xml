@@ -30,6 +30,14 @@
             android:name="com.android.quizcopa.Sobre"
             android:label="@string/title_activity_sobre" >
         </activity>
+        <activity
+            android:name="com.android.iniciar.Categoria"
+            android:label="@string/title_activity_categoria" >
+        </activity>
+        <activity
+            android:name="com.android.iniciar.Nivel"
+            android:label="@string/title_activity_nivel" >
+        </activity>
     </application>
 
 </manifest>
